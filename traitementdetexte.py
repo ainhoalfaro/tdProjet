@@ -20,3 +20,17 @@ print(majuscule("c'est l'été, j'ai joué"))
 def majuscule2 (texte):
     return texte.upper()
 print(majuscule2("texte"))
+
+def cesar (text,s) :
+    result = ""
+    for i in range(0,len(text)):
+        char = text[i]
+        if (char.isupper()):
+            result += chr((ord(char) + s-65) % 26 + 65)
+        else:
+            result += chr((ord(char) + s - 97) % 26 + 97)
+    return result
+
+print(cesar(majuscule(transformation("c'est l'été, j'ai joué")),4))
+
+
