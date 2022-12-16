@@ -31,8 +31,24 @@ def cesar (text,s) :
             result += chr((ord(char) + s - 97) % 26 + 97)
     return result
 
-print(cesar(majuscule(transformation("c'est l'été, j'ai joué")),4))
+print(cesar("TVTZVJKLEKVOKVYPGVITFEWZUVEKZVCCVDFKUVGRJJVVJKOBGCFKZWEBJHFV",25))
 
 fichier = open("nouveau", "w")
 fichier.write(cesar(majuscule(transformation("c'est l'été, j'ai joué")),4))
 fichier.close()
+
+message = 'SUSYUIJKDJUNJUXOFUHSEDVYTUDJYUBBUCEJTUFQIIUUIJNAFBEJYVDAIGEU'
+Lettres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+for clef in range(len(Lettres)):
+   traduction = ''
+   for symbol in message:
+      if symbol in Lettres:
+         num = Lettres.find(symbol)
+         num = num -  clef
+         if num < 0:
+            num = num + len(Lettres)
+         traduction = traduction + Lettres[num]
+      else:
+         traduction = traduction + symbol
+print('Hacking key #%s: %s' % (clef, traduction))
