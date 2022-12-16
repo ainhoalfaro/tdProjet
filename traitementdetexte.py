@@ -33,4 +33,6 @@ def cesar (text,s) :
 
 print(cesar(majuscule(transformation("c'est l'été, j'ai joué")),4))
 
-
+fichier = open("nouveau", "w")
+fichier.write(cesar(majuscule(transformation("c'est l'été, j'ai joué")),4))
+fichier.close()
